@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Simple BTRFS rolling snapshot script.  
+# 2014 - Marvin Curlee - marvin@mcurlee.com - http://mcurlee.com
+
+
+
+
 # Adjust for your env
 PATH=/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
 
