@@ -1,15 +1,22 @@
 #!/bin/bash
 
+# Adjust for your env
 PATH=/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
 
 
 
 # set script params
 
+# set log file path
 LOGFILE=/scripts/snapper-logfile.txt
 
+# select the subvolume to snapshot
 SUBPATH="/"
+
+# select the location for the snapshots
 SNAPPATH="/"
+
+# how many to keep in rotation
 MAXSNAPS=30
 
 
@@ -18,6 +25,7 @@ echo "--------------" >> $LOGFILE
 echo `date` >> $LOGFILE
 
 # create new snapshot
+# change date format if you need more than one snapshot per day, otherwise you will have name conflicts
 btrfs sub snap -r "$SUBPATH" "$SNAPPATH"/.snapshot`date +%m%d%Y` >> $LOGFILE 2>&1
 
 
